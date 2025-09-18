@@ -1,9 +1,7 @@
 using ExoWebApi.Contexts;
 using ExoWebApi.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ExoWebApi.Repositories
 {
@@ -16,26 +14,22 @@ namespace ExoWebApi.Repositories
             _context = context;
         }
 
-        // Método para listar todos os projetos
         public List<Projeto> Listar()
         {
             return _context.Projetos.ToList();
         }
 
-        // Método para cadastrar um novo projeto
         public void Cadastrar(Projeto projeto)
         {
             _context.Projetos.Add(projeto);
             _context.SaveChanges();
         }
 
-        // Método para buscar um projeto por ID
         public Projeto BuscarPorId(int id)
         {
             return _context.Projetos.Find(id);
         }
 
-        // Método para atualizar um projeto existente
         public void Atualizar(int id, Projeto projeto)
         {
             Projeto projetoBuscado = _context.Projetos.Find(id);
@@ -51,7 +45,6 @@ namespace ExoWebApi.Repositories
             }
         }
 
-        // Método para deletar um projeto
         public void Deletar(int id)
         {
             Projeto projetoBuscado = _context.Projetos.Find(id);

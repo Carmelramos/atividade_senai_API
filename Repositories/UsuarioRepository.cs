@@ -1,5 +1,4 @@
 using ExoWebApi.Contexts;
-using ExoWebApi.Models;
 using System.Collections.Generic;
 using System.Linq;
 
